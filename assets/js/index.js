@@ -1,22 +1,36 @@
 document.addEventListener('DOMContentLoaded', () => {
+  const API = 'http://localhost:8001/news';
+
   // ! CREATE
 
   // ! Create news button from Navbar opens Modal Window
   // ! On modal window when inputs are filled, collect and POST
   const postBtn = document.getElementById('create_news');
-  postBtn.addEventListener('click', createNews)
-
+  postBtn.addEventListener('click', createNews);
 
   function createNews() {
     const title = document.getElementById('news_title');
     const text = document.getElementById('news_text');
-    const isYellow - document.getElementById('news_is_yellow');
-    console.log(title, text, isYellow)
+    const isYellow = document.getElementById('news_is_yellow');
+    console.log(title, text, isYellow);
+    const obj = {
+      title: title.value,
+      text: text.value,
+      isYellow: isYellow.value,
+    };
+    postNews(obj);
   }
 
-
-
-
+  function postNews(obj) {
+    console.log(obj);
+    fetch(API, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(obj),
+    });
+  }
 
   // ! As user i want to be able select between Yellow page or Ordinary News
 
