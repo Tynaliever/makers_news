@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const API = 'http://localhost:8001/news';
+  const API = 'http://localhost:8001/news/';
 
   // ! CREATE
 
@@ -38,14 +38,46 @@ document.addEventListener('DOMContentLoaded', () => {
   // ! Details Block should render TOP news
   // ! Ordinary news to render REST news
   // ! Yellow pages to render YELLOW news
+  window.getOne = function getOneNews(id) {
+    const url = `${API}/${id}`;
+    fetch(url)
+      .then((resp) => resp.json())
+      .then((data) => console.log(data));
+  };
 
   // ! UPDATE
   // ! When mouseover the news display Edit button
   // ! when clicked open Modal Window and pre-fill inputs
+  window.updateOne = function updateOne(id) {
+    const obj = {
+      title: 'updated title',
+    };
+    const url = `${API}/${id}`;
+    fetch(url, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(obj),
+    })
+      .then((resp) => resp.json())
+      .then((data) => console.log(data));
+  };
 
   // ! DELETE
   // ! When mouseover the news display DELETE button
   // ! When clicked just delete it
+  window.deleteOne = function deleteOne(id) {
+    const url = `${API}/${id}`;
+    fetch(url, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((resp) => resp.json())
+      .then((data) => console.log(data));
+  };
 
   // ! NavItem onHover show Menu
   // ! Search at last if got time

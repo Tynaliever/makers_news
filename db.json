@@ -1,10 +1,16 @@
 {
   "news": [
     {
-      "title": "wdasd",
+      "title": "1",
       "text": "dasd",
       "isYellow": "on",
       "id": 1
+    },
+    {
+      "title": "updated title",
+      "text": "dasd",
+      "isYellow": "on",
+      "id": 2
     }
   ]
 }
