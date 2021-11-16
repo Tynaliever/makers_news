@@ -23,10 +23,15 @@ main {
 
 .all_news {
   display: flex;
+  justify-content: space-between;
 }
 
 .yellow_pages {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.modal-body {
+  /* display: none; */
 }

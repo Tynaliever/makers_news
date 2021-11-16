@@ -70,7 +70,14 @@
                 </ul>
               </li>
               <li class="nav-item">
-                <a class="nav-link disabled">Link</a>
+                <button
+                  type="button"
+                  class="btn btn-outline-success"
+                  data-bs-toggle="modal"
+                  data-bs-target="#exampleModal"
+                >
+                  Create News
+                </button>
               </li>
             </ul>
             <form class="d-flex">
@@ -151,6 +158,74 @@
         </div>
       </div>
     </main>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <!-- Form Begin -->
+            <form>
+              <div class="mb-3">
+                <label for="news_title" class="form-label">Title</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="news_title"
+                  aria-describedby="emailHelp"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="news_text" class="form-label">Text</label>
+                <input type="text" class="form-control" id="news_text" />
+              </div>
+              <div class="mb-3 form-check">
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  id="news_is_yellow"
+                />
+                <label class="form-check-label" for="news_is_yellow"
+                  >Is Yellow</label
+                >
+              </div>
+              <button id="create_news" type="submit" class="btn btn-primary">Submit</button>
+            </form>
+            <!-- Form End -->
+
+            <!-- Title -->
+            <!-- Text -->
+            <!-- URL -->
+            <!-- Category -->
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script
       src="https://code.jquery.com/jquery-3.6.0.min.js"
