@@ -1,0 +1,32 @@
+/* div,
+header,
+main {
+  border: solid 1px black;
+} */
+
+header {
+  height: 20vh;
+}
+
+main {
+  height: 80vh;
+}
+
+.news_list {
+  display: flex;
+}
+
+.all_news,
+.yellow_pages {
+  width: 50%;
+}
+
+.all_news {
+  display: flex;
+}
+
+.yellow_pages {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
